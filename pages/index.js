@@ -13,8 +13,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className="text-6xl  text-purple-100 font-bold underline">
-          Hello world!
+        <h1 className="text-6xl  text-red-100 font-bold underline">
+          Hello world! Malika
         </h1>
 
         <h1 className="text-6xl  text-purple-100 font-bold underline">
