@@ -3,13 +3,14 @@ import cn from 'classnames';
 import { useRouter } from 'next/router';
 import MobileMenu from './MobileMenu';
 
-function NavItem({ href, text }) {
+function NavItem({ href, text, target }) {
   const router = useRouter();
   const isActive = router.asPath === href;
 
   return (
     <NextLink href={href}>
       <a
+        target={target}
         className={cn(
           isActive
             ? 'font-semibold text-gray-800 dark:text-gray-200'
@@ -29,15 +30,17 @@ const Header = ({ mounted, handleTheme, resolvedTheme }) => {
         <div className="ml-[-0.60rem]">
           <MobileMenu />
           <NavItem href="/" text="Home" />
-          <NavItem href="/guestbook" text="Guestbook" />
-          <NavItem href="/dashboard" text="Dashboard" />
           <NavItem href="/blog" text="Blog" />
-          <NavItem href="/snippets" text="Snippets" />
+          <NavItem
+            href="https://drive.google.com/file/d/1oJVUjNgiB-08jIgDAzf8dMRdoaCVFITP/view"
+            text="Resume"
+            target="_blank"
+          />
         </div>
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="w-9 h-9 rounded-lg border-gray-900 dark:ring-white-300 flex items-center justify-center  hover:ring-1 dark:ring-1 ring-gray-300  transition-all"
+          className="w-9 h-9 rounded-lg border-gray-900 dark:ring-white-300 flex items-center justify-center  hover:ring-1 ring-gray-300  transition-all"
           onClick={handleTheme}
         >
           {mounted && (

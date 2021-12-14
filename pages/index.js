@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import BlogPostCard from '../components/BlogPostCard';
 
 import styles from '../styles/Home.module.css';
 
@@ -17,107 +18,93 @@ export default function Home() {
         className="pt-10 pb-10 relative min-h-screen-without-nav items-center content-center flex bg-primary-100 dark:bg-gray-900"
       >
         <div className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-4 pb-4 sm:pb-4  text-gray-900  dark:bg-gray-900 dark:text-gray-100">
-          <div className="container gap-8 md:gap-0 mx-6 sm:mx-auto grid md:grid-cols-2 items-center content-center justify-items-center">
-            <h1 className="text-4xl font-bold md:text-6xl flex flex-col items-center md:items-start">
-              <span>Malika is a</span>
-              <span className="animate-title-part1" href="#portfolio">
-                software developer
-              </span>
-              <span className="animate-title-part2" href="#stats">
-                foodie
-              </span>
-              <span className="animate-title-part3" href="#personal">
-                travel lover
-              </span>
-            </h1>
+          <div className="container flex gap-8 md:gap-0 mx-6 sm:mx-auto grid md:grid-cols-1 items-center content-center justify-items-center">
+            <div className="w-full pb-10">
+              <h5 className="font-semibold pb-5">Hi, my name is</h5>
+              <h1
+                // style={{ flexBasis: '100%' }}
+                className="text-4xl font-bold md:text-6xl  md:items-start pb-2"
+              >
+                Malika Ansari{' '}
+                <span role="img" aria-label="wave">
+                  👋
+                </span>
+              </h1>
+              <h1
+                // style={{ flexBasis: '100%' }}
+                className="text-2xl font-bold md:text-4xl  md:items-start pb-5"
+              >
+                I build things for the web.
+              </h1>
+              <p className="pb-20">
+                I’m a software engineer specializing in front-end development
+                and creating dynamic web applications.
+              </p>
+            </div>
+
             <div className="w-3/4"></div>
           </div>
         </div>
+        <div className="absolute bottom-0 w-full">
+          <svg
+            preserveAspectRatio="none"
+            width="100%"
+            height="100"
+            viewBox="0 0 1440 74"
+            className="fill-current"
+          >
+            <path d="M456.464 0.0433865C277.158 -1.70575 0 50.0141 0 50.0141V74H1440V50.0141C1440 50.0141 1320.4 31.1925 1243.09 27.0276C1099.33 19.2816 1019.08 53.1981 875.138 50.0141C710.527 46.3727 621.108 1.64949 456.464 0.0433865Z"></path>
+          </svg>
+        </div>
       </section>
+
       <section
         id="hero"
         className="pt-10 pb-10 relative min-h-screen-without-nav items-center content-center flex bg-white-100"
       >
-        <div className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-4 pb-4 sm:pb-4  text-gray-900  dark:bg-gray-900 dark:text-gray-100">
-          <div className="container gap-8 md:gap-0 mx-6 sm:mx-auto grid md:grid-cols-2 items-center content-center justify-items-center">
-            <h1 className="text-4xl font-bold md:text-6xl flex flex-col items-center md:items-start">
-              <span>Malika is a</span>
-              <span className="animate-title-part1" href="#portfolio">
-                software developer
-              </span>
-              <span className="animate-title-part2" href="#stats">
-                foodie
-              </span>
-              <span className="animate-title-part3" href="#personal">
-                travel lover
-              </span>
-            </h1>
-            <div className="w-3/4"></div>
+        <div className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-4 pb-4 sm:pb-4  text-gray-900  dark:text-gray-100">
+          <div className=" container flex gap-8 md:gap-0 mx-6 sm:mx-auto grid md:grid-cols-1 items-center content-center justify-items-center">
+            <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-2 text-black dark:text-white">
+              Technologies I’ve been working with
+            </h3>
+            <div className="flex w-full flex-wrap gap-6 mt-6 justify-center flex-col md:flex-row">
+              <BlogPostCard
+                styles={{ flexBasis: '55%' }}
+                title="Languages & Frameworks"
+                list={[
+                  'Javascript',
+                  'React.js',
+                  'React Native',
+                  'Next.js',
+                  'React Native',
+                  'Redux',
+                  'jQuery',
+                ]}
+                gradient="from-[#D8B4FE] to-[#818CF8]"
+              />
+              <BlogPostCard
+                styles={{ flex: 1 }}
+                title="User Interface & Styling"
+                list={['CSS3', 'SASS', 'LESS', 'Bootstrap', 'Tailwind']}
+                gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
+              />
+              <BlogPostCard
+                styles={{ flexBasis: '40%' }}
+                title="Tools"
+                list={['Git', 'Webpack', 'Grunt']}
+                gradient="from-[#FF709F] via-[#FCA5A5] to-[#FECACA]"
+              />
+              <BlogPostCard
+                styles={{ flex: 1 }}
+                title="Others"
+                list={['Gitlab', 'JIRA', 'Bitbucket', 'Netlify']}
+                gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
+              />
+            </div>
           </div>
         </div>
       </section>
-      <section
-        id="hero"
-        className="pt-10 pb-10 relative min-h-screen-without-nav items-center content-center flex bg-primary-100 dark:bg-gray-900"
-      >
-        <div className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-4 pb-4 sm:pb-4  text-gray-900  dark:bg-gray-900 dark:text-gray-100">
-          <div className="container gap-8 md:gap-0 mx-6 sm:mx-auto grid md:grid-cols-2 items-center content-center justify-items-center">
-            <h1 className="text-4xl font-bold md:text-6xl flex flex-col items-center md:items-start">
-              <span>Malika is a</span>
-              <span className="animate-title-part1" href="#portfolio">
-                software developer
-              </span>
-              <span className="animate-title-part2" href="#stats">
-                foodie
-              </span>
-              <span className="animate-title-part3" href="#personal">
-                travel lover
-              </span>
-            </h1>
-            <div className="w-3/4"></div>
-          </div>
-        </div>
-      </section>
-      <section
-        id="portfolio"
-        // ref={portfolioRef}
-        className="dark:bg-lightgrey text-text"
-      >
-        <div className="container mx-auto min-h-screen-without-nav items-center content-center py-12">
-          <h2 className="text-center text-2xl mb-6 md:mb-12 font-bold">
-            Some of my work
-          </h2>
-          {/* <Portfolio /> */}
-        </div>
-      </section>
-      <section
-        id="blog"
-        // ref={blogRef}
-        className="bg-purple dark:bg-darkgrey text-text"
-      >
-        <div className="container mx-auto min-h-screen-without-nav flex flex-col items-center justify-center py-12">
-          <h2 className="text-center text-2xl mb-6 md:mb-12 font-bold">
-            Personal blog - most read
-          </h2>
-          {/* <Blog blogs={blogs} /> */}
-        </div>
-      </section>
-      <section
-        // ref={statsRef}
-        id="stats"
-        className="dark:bg-lightgrey text-text"
-      >
-        <div className="container mx-auto min-h-screen-without-nav flex flex-col items-center justify-center py-12 w-full">
-          <h2 className="text-center text-2xl mb-6 md:mb-12 font-bold">
-            My Strava stats
-          </h2>
-          {/* <StravaStats
-            stravaStats={stravaStats}
-            stravaMostRecentRun={stravaMostRecentRun}
-            stravaMostRecentRide={stravaMostRecentRide}
-          /> */}
-        </div>
-      </section>
+
       <section
         id="contact"
         // ref={contactRef}
@@ -127,16 +114,76 @@ export default function Home() {
       </section>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        <ul className="flex gap-5">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/malika-ansari-b89a81137/"
+              aria-label="Linkedin"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                height="20"
+                className="fstroke-1 stroke-current text-primary-400 inline h-6 w-6"
+              >
+                <title>LinkedIn</title>
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/malikaansari91"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="fstroke-1 stroke-current text-primary-400 inline h-6 w-6"
+              >
+                <title>GitHub</title>
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Twitter" target="_blank" rel="noreferrer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                height="20"
+                className="fstroke-1 stroke-current text-primary-400 inline h-6 w-6"
+              >
+                <title>Twitter</title>
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </footer>
     </div>
   );
