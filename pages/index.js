@@ -2,7 +2,6 @@ import Head from 'next/head';
 
 import BlogPostCard from '../components/BlogPostCard';
 import cn from 'classnames';
-import styles from '../styles/Home.module.css';
 import { AnimWrapper } from '../components/AnimationWrapper';
 import { ExperienceCard } from '../components/ExperienceCard';
 
@@ -161,7 +160,7 @@ export default function Home() {
         <div className="container grid md:grid-cols-2 gap-6 min-h-screen-without-nav content-center align-items"></div>
       </section>
 
-      <footer className={styles.footer}>
+      <footer className="flex justify-center items-center flex-col py-5">
         <ul className="flex gap-5">
           <li>
             <a
@@ -232,6 +231,26 @@ export default function Home() {
             </a>
           </li>
         </ul>
+        <div className="pt-2 text-gray-800">
+          Made with{' '}
+          <a
+            target="_blank"
+            href="https://nextjs.org"
+            className="text-primary-400 dark:text-teal-400"
+            rel="noreferrer"
+          >
+            Next.js{' '}
+          </a>
+          • View Source on{' '}
+          <a
+            target="_blank"
+            href="https://github.com/malikaansari91/portfolio"
+            className="text-primary-400 dark:text-teal-400"
+            rel="noreferrer"
+          >
+            Github
+          </a>
+        </div>
       </footer>
     </div>
   );
