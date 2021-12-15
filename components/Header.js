@@ -13,8 +13,8 @@ function NavItem({ href, text, target }) {
         target={target}
         className={cn(
           isActive
-            ? 'font-semibold text-gray-800 dark:text-gray-200'
-            : 'font-normal text-gray-600 dark:text-gray-400',
+            ? 'font-semibold text-gray-800 dark:text-teal-200'
+            : 'font-normal text-gray-600 dark:text-teal-400',
           'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all'
         )}
       >

@@ -1,12 +1,18 @@
-export const ExperienceCard = ({ title, company, range, list = [] }) => {
+export const ExperienceCard = ({
+  title,
+  company,
+  range,
+  list = [],
+  link = '#',
+}) => {
   return (
     <div className="mt-10">
       <h2 className="mb-1">
         <span>{title}</span>
-        <span className="company text-teal-400">
+        <span className="company text-primary-800 dark:text-teal-400">
           &nbsp;@&nbsp;
           <a
-            href="https://www.upstatement.com/"
+            href={link}
             className="inline-link "
             rel="noopener noreferrer"
             target="_blank"
@@ -21,7 +27,7 @@ export const ExperienceCard = ({ title, company, range, list = [] }) => {
           return (
             <div
               key={i}
-              className="flex pl-4 opacity-70 text-sm before:content-['▹'] before:abolute  before:left-0 before:text-teal-400 mb-2"
+              className="flex pl-4 opacity-70 text-sm before:content-['▹'] before:abolute  before:left-0 before:text-teal-800 dark:before:text-teal-400 mb-2"
             >
               <span className="pl-5">{item}</span>
             </div>
