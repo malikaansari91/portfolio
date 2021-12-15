@@ -231,7 +231,7 @@ export default function Home() {
             </a>
           </li>
         </ul>
-        <div className="pt-2 text-gray-800">
+        <div className="pt-2 text-gray-800 dark:text-white">
           Made with{' '}
           <a
             target="_blank"
