@@ -1,8 +1,16 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import BlogPostCard from '../components/BlogPostCard';
-
+import { useAnimation, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import cn from 'classnames';
 import styles from '../styles/Home.module.css';
+import { useEffect } from 'react';
+import { AnimWrapper } from '../components/AnimationWrapper';
+import { animation } from 'tailwindcss/defaultTheme';
+import { ExperienceCard } from '../components/ExperienceCard';
+
+const gradient = 'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]';
 
 export default function Home() {
   return (
@@ -15,32 +23,40 @@ export default function Home() {
 
       <section
         id="hero"
-        className="pt-10 pb-10 relative min-h-screen-without-nav items-center content-center flex bg-primary-100 dark:bg-gray-900"
+        className="py-10 md:pt-20 md:pb-20 relative min-h-screen-without-nav items-center content-center flex bg-primary-100 dark:bg-gray-900"
       >
         <div className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-4 pb-4 sm:pb-4  text-gray-900  dark:bg-gray-900 dark:text-gray-100">
           <div className="container flex gap-8 md:gap-0 mx-6 sm:mx-auto grid md:grid-cols-1 items-center content-center justify-items-center">
-            <div className="w-full pb-10">
-              <h5 className="font-semibold pb-5">Hi, my name is</h5>
-              <h1
-                // style={{ flexBasis: '100%' }}
-                className="text-4xl font-bold md:text-6xl  md:items-start pb-2"
-              >
-                Malika Ansari{' '}
-                <span role="img" aria-label="wave">
-                  👋
-                </span>
-              </h1>
-              <h1
-                // style={{ flexBasis: '100%' }}
-                className="text-2xl font-bold md:text-4xl  md:items-start pb-5"
-              >
-                I build things for the web.
-              </h1>
-              <p className="pb-20">
-                I’m a software engineer specializing in front-end development
-                and creating dynamic web applications.
-              </p>
-            </div>
+            <AnimWrapper>
+              <div className="w-full pb-10">
+                {/* <h5 className="font-semibold pb-5">Hi, my name is</h5> */}
+                <h1
+                  // style={{ flexBasis: '100%' }}
+                  className={cn(
+                    'text-3xl md:text-6xl font-extrabold dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]',
+                    'pb-4'
+                  )}
+                >
+                  Hi, I'm Malika Ansari.
+                </h1>
+
+                <h1
+                  // style={{ flexBasis: '100%' }}
+                  className="text-2xl md:text-4xl font-bold  md:items-start pb-5 opacity-100 font-extrabold dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
+                >
+                  A Software Developer.
+                </h1>
+                <p className="pb-10 font-semibold">
+                  I build things for the web!!
+                  <br />
+                  I'm a professional Frontend Developer that loves creating
+                  engaging UI and bringing products to life. My interest in web
+                  development started back in 2017 and currently I enjoy working
+                  on Languages & Frameworks like Javascript, React.js and
+                  Next.js
+                </p>
+              </div>
+            </AnimWrapper>
 
             <div className="w-3/4"></div>
           </div>
@@ -59,57 +75,92 @@ export default function Home() {
       </section>
 
       <section
-        id="hero"
-        className="pt-10 pb-10 relative min-h-screen-without-nav items-center content-center flex bg-white-100"
+        id="tech"
+        className="py-10 md:pt-20 md:pb-20 relative min-h-screen-without-nav items-center content-center flex bg-white-100"
       >
         <div className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-4 pb-4 sm:pb-4  text-gray-900  dark:text-gray-100">
-          <div className=" container flex gap-8 md:gap-0 mx-6 sm:mx-auto grid md:grid-cols-1 items-center content-center justify-items-center">
-            <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-2 text-black dark:text-white">
-              Technologies I’ve been working with
-            </h3>
-            <div className="flex w-full flex-wrap gap-6 mt-6 justify-center flex-col md:flex-row">
-              <BlogPostCard
-                styles={{ flexBasis: '55%' }}
-                title="Languages & Frameworks"
-                list={[
-                  'Javascript',
-                  'React.js',
-                  'React Native',
-                  'Next.js',
-                  'React Native',
-                  'Redux',
-                  'jQuery',
-                ]}
-                gradient="from-[#D8B4FE] to-[#818CF8]"
-              />
-              <BlogPostCard
-                styles={{ flex: 1 }}
-                title="User Interface & Styling"
-                list={['CSS3', 'SASS', 'LESS', 'Bootstrap', 'Tailwind']}
-                gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
-              />
-              <BlogPostCard
-                styles={{ flexBasis: '40%' }}
-                title="Tools"
-                list={['Git', 'Webpack', 'Grunt']}
-                gradient="from-[#FF709F] via-[#FCA5A5] to-[#FECACA]"
-              />
-              <BlogPostCard
-                styles={{ flex: 1 }}
-                title="Others"
-                list={['Gitlab', 'JIRA', 'Bitbucket', 'Netlify']}
-                gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
-              />
+          <AnimWrapper>
+            <div className=" container flex gap-8 md:gap-0 px-6 sm:mx-auto grid md:grid-cols-1 items-center content-center justify-items-center">
+              <h3 className="md:mb-10 font-bold text-2xl md:text-4xl tracking-tight mb-2 text-black dark:text-white">
+                Technologies I’ve been working with
+              </h3>
+              <div className="flex w-full flex-wrap gap-6 mt-6 justify-center flex-col md:flex-row">
+                <BlogPostCard
+                  styles={{ flexBasis: '55%' }}
+                  title="Languages & Frameworks"
+                  list={[
+                    'Javascript',
+                    'React.js',
+                    'React Native',
+                    'Next.js',
+                    'React Native',
+                    'Redux',
+                    'jQuery',
+                  ]}
+                  gradient="from-[#D8B4FE] to-[#818CF8]"
+                />
+                <BlogPostCard
+                  styles={{ flex: 1 }}
+                  title="User Interface & Styling"
+                  list={['CSS3', 'SASS', 'LESS', 'Bootstrap', 'Tailwind']}
+                  gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
+                />
+                <BlogPostCard
+                  styles={{ flexBasis: '40%' }}
+                  title="Tools"
+                  list={['Git', 'Webpack', 'Grunt']}
+                  gradient="from-[#FF709F] via-[#FCA5A5] to-[#FECACA]"
+                />
+                <BlogPostCard
+                  styles={{ flex: 1 }}
+                  title="Others"
+                  list={['Gitlab', 'JIRA', 'Bitbucket', 'Netlify']}
+                  gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
+                />
+              </div>
             </div>
-          </div>
+          </AnimWrapper>
         </div>
       </section>
 
       <section
-        id="contact"
-        // ref={contactRef}
-        className="bg-purple dark:bg-darkgrey text-text"
+        id="tech"
+        className="py-10 md:pt-20 md:pb-20 relative min-h-screen-without-nav items-center content-center flex bg-primary-100 dark:bg-gray-900"
       >
+        <div className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-4 pb-4 sm:pb-4  text-gray-900  dark:text-gray-100">
+          <AnimWrapper>
+            <div className=" container flex gap-8 md:gap-0 px-6 sm:mx-auto grid md:grid-cols-1 items-center content-center justify-items-center">
+              <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-2 text-black dark:text-white">
+                Where I’ve Worked
+              </h3>
+              <ExperienceCard
+                title="Senior Software Developer"
+                company="Yapsody India Pvt. Ltd."
+                range="May 2018 - Present"
+                list={[
+                  'Lead a team of 4 full-time engineer, participated in the roadmap definition for the team, established engineering best practices and a mentor to other members of the team',
+                  'Develop cross browser, cross devices high-quality, high-performance, beautiful, maintainable front-end code using React.JS, JavaScript, HTML5, CSS3',
+                  'Ensured tight cooperation with other engineers, designers, and artists through active listening, systematic communication, and leadership skills.',
+                  'Fixed bugs and problems across the project codebase in an efficient, timely manner.',
+                ]}
+              />
+              <ExperienceCard
+                title="Software Engineer"
+                company="Maniar Technologies Private Limited"
+                range="July 2017 - April 2019"
+                list={[
+                  'Worked in an Agile-driven environment to effectively maintain project timelines and utilize available resources.',
+                  'Developed designs to meet specific requirements such as quick-loading sites with particular layouts.',
+                  'Produced websites compatible with multiple browsers.',
+                  'Mentored junior engineers and new hires to better improve the competency and efficiency of all staff.',
+                ]}
+              />
+            </div>
+          </AnimWrapper>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-purple dark:bg-darkgrey text-text">
         <div className="container grid md:grid-cols-2 gap-6 min-h-screen-without-nav content-center align-items"></div>
       </section>
 

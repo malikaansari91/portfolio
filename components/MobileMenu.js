@@ -59,23 +59,26 @@ export default function MobileMenu() {
             <li
               className="pt-4 border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
               style={{ transitionDelay: '150ms' }}
+              onClick={toggleMenu}
             >
               <Link href="/">
                 <a className="flex w-auto pb-4">Home</a>
               </Link>
             </li>
-            <li
+            {/* <li
               className="pt-4 border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
               style={{ transitionDelay: '250ms' }}
+              onClick={toggleMenu}
             >
               <Link href="/blog">
                 <a className="flex w-auto pb-4">Blog</a>
               </Link>
-            </li>
+            </li> */}
 
             <li
               className="pt-4 border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
               style={{ transitionDelay: '350ms' }}
+              onClick={toggleMenu}
             >
               <Link href="https://drive.google.com/file/d/1oJVUjNgiB-08jIgDAzf8dMRdoaCVFITP/view">
                 <a target="_blank" className="flex w-auto pb-4">

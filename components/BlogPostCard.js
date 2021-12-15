@@ -2,16 +2,16 @@ import Link from 'next/link';
 
 import cn from 'classnames';
 import { list } from 'postcss';
+import { motion } from 'framer-motion';
 
 export default function BlogPostCard({ title, list = [], gradient, styles }) {
   return (
-    <a
+    <motion.div
+      whileHover={{
+        scale: 1.02,
+      }}
       style={styles}
-      className={cn(
-        'transform hover:scale-[1.01] transition-all',
-        'rounded-xl w-full  bg-gradient-to-r p-1',
-        gradient
-      )}
+      className={cn('rounded-xl w-full  bg-gradient-to-r p-1', gradient)}
     >
       <div className="flex flex-col justify-between h-full bg-white dark:bg-gray-900 rounded-lg p-4">
         <div className="flex flex-col md:flex-row justify-between">
@@ -41,6 +41,6 @@ export default function BlogPostCard({ title, list = [], gradient, styles }) {
           })}
         </div>
       </div>
-    </a>
+    </motion.div>
   );
 }
