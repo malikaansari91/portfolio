@@ -1,7 +1,5 @@
-import Link from 'next/link';
-
 import cn from 'classnames';
-import { list } from 'postcss';
+
 import { motion } from 'framer-motion';
 
 export default function BlogPostCard({ title, list = [], gradient, styles }) {

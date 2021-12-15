@@ -1,16 +1,10 @@
 import Head from 'next/head';
-import Image from 'next/image';
+
 import BlogPostCard from '../components/BlogPostCard';
-import { useAnimation, motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import cn from 'classnames';
 import styles from '../styles/Home.module.css';
-import { useEffect } from 'react';
 import { AnimWrapper } from '../components/AnimationWrapper';
-import { animation } from 'tailwindcss/defaultTheme';
 import { ExperienceCard } from '../components/ExperienceCard';
-
-const gradient = 'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]';
 
 export default function Home() {
   return (
@@ -37,7 +31,7 @@ export default function Home() {
                     'pb-4'
                   )}
                 >
-                  Hi, I'm Malika Ansari.
+                  Hi, I&apos;m Malika Ansari.
                 </h1>
 
                 <h1
@@ -49,7 +43,7 @@ export default function Home() {
                 <p className="pb-10 font-semibold">
                   I build things for the web!!
                   <br />
-                  I'm a professional Frontend Developer that loves creating
+                  I&apos;m a professional Frontend Developer that loves creating
                   engaging UI and bringing products to life. My interest in web
                   development started back in 2017 and currently I enjoy working
                   on Languages & Frameworks like Javascript, React.js and

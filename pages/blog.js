@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { AnimWrapper } from '../components/AnimationWrapper';
-import BlogPostCard from '../components/BlogPostCard';
 import cn from 'classnames';
 import styles from '../styles/Home.module.css';
 
@@ -34,10 +33,10 @@ export default function Blog() {
 
                 <p className="pb-10 font-semibold">
                   <br />
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type specimen book. It has survived
-                  not only five centuries
+                  Lorem Ipsum has been the industry&apos;s standard dummy text
+                  ever since the 1500s, when an unknown printer took a galley of
+                  type and scrambled it to make a type specimen book. It has
+                  survived not only five centuries
                 </p>
               </div>
             </AnimWrapper>
