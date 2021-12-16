@@ -10,12 +10,36 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Malika Ansari</title>
+        <title>Malika Ansari - Portfolio Website</title>
+        <link rel="icon" href="/favicon.ico" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Malika Ansari Portflio (Frontend Developer)"
+          content="Malika Ansari - Frontend Developer with expertise in Javascript, ReactJs, UI development"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="keywords"
+          content="Portfolio, Software Engineer, Software Developer, HTML, CSS, JavaScript, Frontend, Ghent, Malika Ansari"
+        />
+        <meta property="og:title" content="Malika Ansari, Frontend Developer" />
+        <meta
+          property="og:description"
+          content="You can find information related to Malika's Work and contact details on this site"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://malika-ansari-portfolio.netlify.app"
+        />
+        <meta
+          property="og:image"
+          content="https://media.istockphoto.com/photos/cyber-security-web-development-and-work-in-it-concept-picture-id1289411982?b=1&k=20&m=1289411982&s=170667a&w=0&h=0R3OXR4L6LOGphYA3sul4bWQwpGj_DSl05ENiP2kRZg="
+        />
+        <meta property="og:image:width" content="200" />
+        <meta property="og:image:height" content="200" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@forever_malikaa" />
       </Head>
 
       <section
