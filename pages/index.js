@@ -268,7 +268,7 @@ export default function Home() {
             </a>
           </motion.li>
         </ul>
-        <div className="pt-2 text-gray-800 dark:text-white">
+        <div className="pt-2 text-gray-800 dark:text-white px-2 font-sm">
           Made with{' '}
           <a
             target="_blank"
