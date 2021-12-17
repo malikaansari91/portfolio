@@ -33,6 +33,7 @@ export default function Home() {
           content="https://malika-ansari-portfolio.netlify.app"
         />
         <meta property="og:type" content="website" />
+        <meta name="author" content="Malika Ansari" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@forever_malikaa" />
       </Head>
