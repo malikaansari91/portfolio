@@ -22,7 +22,10 @@ export default function Home() {
           name="keywords"
           content="Portfolio, Software Engineer, Software Developer, HTML, CSS, JavaScript, Frontend, Ghent, Malika Ansari"
         />
-        <meta property="og:title" content="Malika Ansari, Frontend Developer" />
+        <meta
+          property="og:title"
+          content="Malika Ansari - Frontend Developer"
+        />
         <meta property="og:image" content="/banner.png" />
         <meta
           property="og:description"
@@ -264,7 +267,7 @@ export default function Home() {
             </a>
           </motion.li>
         </ul>
-        <div className="pt-2 text-gray-800 dark:text-white px-2 font-sm">
+        <div className="pt-2 text-gray-800 dark:text-white font-sm">
           Made with{' '}
           <a
             target="_blank"
