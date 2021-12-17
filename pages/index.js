@@ -248,7 +248,12 @@ export default function Home() {
               scale: 1.2,
             }}
           >
-            <a href="#" aria-label="Twitter" target="_blank" rel="noreferrer">
+            <a
+              href="https://twitter.com/forever_malikaa"
+              aria-label="Twitter"
+              target="_blank"
+              rel="noreferrer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 role="img"
