@@ -80,7 +80,7 @@ export default function MobileMenu() {
               style={{ transitionDelay: '350ms' }}
               onClick={toggleMenu}
             >
-              <Link href="https://drive.google.com/file/d/1oJVUjNgiB-08jIgDAzf8dMRdoaCVFITP/view">
+              <Link href="https://drive.google.com/file/d/10xM9kVbSRr58mOZbBobIiDreHXreWdQ1/view?usp=sharing">
                 <a target="_blank" className="flex w-auto pb-4">
                   Resume
                 </a>
