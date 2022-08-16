@@ -32,7 +32,7 @@ const Header = ({ mounted, handleTheme, resolvedTheme }) => {
           <NavItem href="/" text="Home" />
           {/* <NavItem href="/blog" text="Blog" /> */}
           <NavItem
-            href="https://drive.google.com/file/d/10xM9kVbSRr58mOZbBobIiDreHXreWdQ1/view?usp=sharing"
+            href="https://drive.google.com/file/d/1XVsWGCAFzTf2K2huW1EIm5wwVwyGR5Lg/view?usp=sharing"
             text="Resume"
             target="_blank"
           />
