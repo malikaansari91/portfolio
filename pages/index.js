@@ -115,6 +115,7 @@ export default function Home() {
                     'Next.js',
                     'Redux',
                     'jQuery',
+                    'GraphQL',
                   ]}
                   gradient="from-[#D8B4FE] to-[#818CF8]"
                 />
@@ -153,14 +154,26 @@ export default function Home() {
                 Where I’ve Worked
               </h3>
               <ExperienceCard
+                title="Senior Frontend Developer"
+                company="Treebo Hotels"
+                range="March 2022 - Present"
+                link="https://www.linkedin.com/company/treebohotels/"
+                list={[
+                  'Worked on B2B Property Management System to create new features using libraries like ReactJS and GraphQL',
+                  'Solved Production issues reported by customers in timely manner',
+                  'Ensured tight cooperation with other engineers, designers, and artists through active listening, systematic communication, and leadership skills.',
+                  'Performed code reviews of other team members work and recommends changes to improve code quality',
+                ]}
+              />
+              <ExperienceCard
                 title="Senior Software Developer"
                 company="Yapsody India Pvt. Ltd."
-                range="May 2019 - Present"
+                range="May 2019 - March 2022"
                 link="https://www.linkedin.com/company/yapsody-india-pvt-ltd/mycompany/"
                 list={[
                   'Lead a team of 4 full-time engineer, participated in the roadmap definition for the team, established engineering best practices and a mentor to other members of the team',
                   'Develop cross browser, cross devices high-quality, high-performance, beautiful, maintainable front-end code using React.JS, JavaScript, HTML5, CSS3',
-                  'Ensured tight cooperation with other engineers, designers, and artists through active listening, systematic communication, and leadership skills.',
+                  'Reviewing code, supporting company through interviewing and onboarding new team members',
                   'Fixed bugs and problems across the project codebase in an efficient, timely manner.',
                 ]}
               />
