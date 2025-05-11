@@ -22,9 +22,10 @@ export default function Hero() {
         Malika Ansari
       </h1>
       <p className="max-w-2xl text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
-        Passionate developer with a knack for solving complex problems through
-        code. Mostly self-taught and driven by an unyielding curiosity to
-        explore and master new technologies.
+        Passionate about crafting exceptional web experiences as a Frontend
+        Developer. I specialize in building fast, scalable, and intuitive
+        applications that engage and delight users. Let’s create something great
+        together!
       </p>
       <div className="flex flex-wrap gap-4 justify-center">
         <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
