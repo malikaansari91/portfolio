@@ -28,24 +28,24 @@ export default function Education() {
         {education.map((edu, index) => (
           <Card
             key={index}
-            className="bg-white dark:bg-black border border-gray-300 dark:border-gray-800 overflow-hidden hover-lift"
+            className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 shadow-md overflow-hidden hover-lift"
           >
-            <div className="px-3.5 py-3 flex items-center gap-5">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-white dark:bg-gray-900 rounded-md flex items-center justify-center overflow-hidden">
+            <div className="px-5 py-4 flex items-center gap-4">
+              <div className="flex-shrink-0 flex items-center justify-center">
+                <span className="inline-flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 h-12 w-12 shadow-sm">
                   {edu.icon && (
-                    <edu.icon className="h-7 w-7 text-blue-600 dark:text-blue-400" />
+                    <edu.icon className="h-6 w-6 text-gray-400 dark:text-gray-400" />
                   )}
-                </div>
+                </span>
               </div>
               <div className="flex-grow flex flex-col justify-center">
                 <h3 className="text-lg font-bold text-black dark:text-white">
                   {edu.degree}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5 font-medium">
                   {edu.institution}
                 </p>
-                <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+                <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5 font-light">
                   {edu.period}
                 </p>
                 {!edu.completed && 'status' in edu && (
