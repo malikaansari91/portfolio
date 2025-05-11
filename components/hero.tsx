@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Mail, Linkedin, MessageSquare } from 'lucide-react';
+import { Github, Mail, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import {
   DropdownMenu,
@@ -12,7 +12,8 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export default function Hero() {
-  const resumeUrl = '#'; // Placeholder for resume URL
+  const resumeUrl =
+    'https://drive.google.com/file/d/1j_nGYuO5NEqTMEjyvyGmJPs97mxiwzL7/view?usp=sharing';
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -28,15 +29,18 @@ export default function Hero() {
       <div className="flex flex-wrap gap-4 justify-center">
         <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded-md hover-lift">
+            <Button
+              variant="outline"
+              className="border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm px-3 py-1 rounded-md hover-lift"
+            >
               Contact Me!
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 text-gray-800 dark:text-white w-56">
-            <div className="px-4 py-3 text-lg font-semibold border-b border-gray-200 dark:border-gray-800">
+            <div className="px-3 py-2 text-base font-semibold border-b border-gray-200 dark:border-gray-800">
               Get in touch
             </div>
-            <DropdownMenuItem className="py-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-800">
+            <DropdownMenuItem className="py-2 px-3 text-sm cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-800">
               <Link
                 href="mailto:malikaansari91@gmail.com"
                 className="flex items-center w-full"
@@ -45,19 +49,13 @@ export default function Hero() {
                 <span>Email</span>
               </Link>
             </DropdownMenuItem>
-            <DropdownMenuItem className="py-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-800">
+
+            <DropdownMenuItem className="py-2 px-3 text-sm cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-800">
               <Link
-                href="https://wa.me/919619575311"
+                href="https://www.linkedin.com/in/malika-ansari-b89a81137/"
                 className="flex items-center w-full"
-              >
-                <MessageSquare className="mr-2 h-5 w-5" />
-                <span>WhatsApp</span>
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="py-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-800">
-              <Link
-                href="https://linkedin.com/in/malika-ansari"
-                className="flex items-center w-full"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin className="mr-2 h-5 w-5" />
                 <span>LinkedIn</span>
@@ -66,7 +64,7 @@ export default function Hero() {
           </DropdownMenuContent>
         </DropdownMenu>
         <Link
-          href="https://github.com/malikaansari"
+          href="https://github.com/malikaansari91"
           target="_blank"
           rel="noopener noreferrer"
         >
