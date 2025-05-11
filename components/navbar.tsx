@@ -1,28 +1,57 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import { Sun, Moon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+import { Sun, Moon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const navItems = [
-  { name: "About", href: "#home" },
-  { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
-  { name: "Education", href: "#education" },
+  { name: 'About', href: '#home' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Education', href: '#education' },
 ];
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     setMounted(true);
+    // Improved scroll spy logic
+    const handleScroll = () => {
+      const sectionIds = ['home', 'skills', 'experience', 'education'];
+      let current = sectionIds[0];
+      let minDiff = Number.POSITIVE_INFINITY;
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const diff = Math.abs(rect.top - 80);
+          if (rect.top <= 80 && diff < minDiff) {
+            minDiff = diff;
+            current = id;
+          }
+        }
+      });
+      // If at the bottom of the page, force last section as active
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 2
+      ) {
+        current = sectionIds[sectionIds.length - 1];
+      }
+      setActiveSection(current);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
   };
 
   const scrollToSection = (href: string) => {
@@ -30,8 +59,8 @@ export default function Navbar() {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+        behavior: 'smooth',
+        block: 'start',
       });
     }
   };
@@ -39,84 +68,51 @@ export default function Navbar() {
   if (!mounted) return null;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white dark:bg-black/70 border-b border-gray-200 dark:border-gray-800">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black border-b border-gray-200 dark:border-black"
+      style={{ fontFamily: 'Inter, sans-serif' }}
+    >
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="flex justify-between items-center h-16">
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
+        <div className="flex justify-between items-center h-14">
+          <div className="hidden md:flex space-x-10">
+            {navItems.map((item) => {
+              const sectionId = item.href.replace('#', '');
+              const isActive = activeSection === sectionId;
+              return (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className={`text-base font-medium transition-colors px-0 py-0
+                    ${
+                      isActive
+                        ? 'text-black dark:text-white'
+                        : 'text-gray-500 dark:text-gray-400'
+                    }
+                    hover:text-black dark:hover:text-white`}
+                  style={{ fontFamily: 'Inter, sans-serif' }}
+                >
+                  {item.name}
+                </button>
+              );
+            })}
           </div>
 
           <Button
             variant="ghost"
             size="icon"
             onClick={toggleTheme}
-            className="text-gray-700 dark:text-gray-300"
+            className="text-black dark:text-white hover:text-black dark:hover:text-white focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-white"
             aria-label="Toggle theme"
           >
-            {resolvedTheme === "dark" ? (
-              <Sun className="h-5 w-5 text-yellow-300" />
+            {resolvedTheme === 'dark' ? (
+              <Sun className="h-5 w-5 text-white" />
             ) : (
-              <Moon className="h-5 w-5 text-gray-700" />
+              <Moon className="h-5 w-5 text-black" />
             )}
             <span className="sr-only">Toggle theme</span>
           </Button>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-black/90 border-b border-gray-200 dark:border-gray-800">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md w-full text-left"
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
 }

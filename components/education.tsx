@@ -28,9 +28,9 @@ export default function Education() {
         {education.map((edu, index) => (
           <Card
             key={index}
-            className="bg-gray-100/20 dark:bg-black border border-gray-300 dark:border-gray-800 overflow-hidden"
+            className="bg-white dark:bg-black border border-gray-300 dark:border-gray-800 overflow-hidden"
           >
-            <div className="px-6 py-3 flex items-center gap-5">
+            <div className="px-3.5 py-3 flex items-center gap-5">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 bg-white dark:bg-gray-900 rounded-md flex items-center justify-center overflow-hidden">
                   {edu.icon && (
