@@ -22,13 +22,13 @@ export default function Education() {
   return (
     <div>
       <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">
-        Education
+        Where It All Began
       </h2>
       <div className="space-y-6">
         {education.map((edu, index) => (
           <Card
             key={index}
-            className="bg-white dark:bg-black border border-gray-300 dark:border-gray-800 overflow-hidden"
+            className="bg-white dark:bg-black border border-gray-300 dark:border-gray-800 overflow-hidden hover-lift"
           >
             <div className="px-3.5 py-3 flex items-center gap-5">
               <div className="flex-shrink-0">

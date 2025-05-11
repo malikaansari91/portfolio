@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Github, Mail, Linkedin, MessageSquare } from "lucide-react";
-import Link from "next/link";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Github, Mail, Linkedin, MessageSquare } from 'lucide-react';
+import Link from 'next/link';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 
 export default function Hero() {
-  const resumeUrl = "#"; // Placeholder for resume URL
+  const resumeUrl = '#'; // Placeholder for resume URL
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="flex flex-wrap gap-4 justify-center">
         <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded-md hover-lift">
               Contact Me!
             </Button>
           </DropdownMenuTrigger>
@@ -72,7 +72,7 @@ export default function Hero() {
         >
           <Button
             variant="outline"
-            className="border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 px-6 py-2 rounded-md"
+            className="border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm px-3 py-1 rounded-md hover-lift"
           >
             <Github className="h-5 w-5" />
           </Button>
@@ -80,7 +80,7 @@ export default function Hero() {
         <Link href={resumeUrl} target="_blank" rel="noopener noreferrer">
           <Button
             variant="outline"
-            className="border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 px-6 py-2 rounded-md"
+            className="border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm px-3 py-1 rounded-md hover-lift"
           >
             My Resume
           </Button>

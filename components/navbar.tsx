@@ -82,7 +82,7 @@ export default function Navbar() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-base font-medium transition-colors px-0 py-0
+                  className={`text-sm font-medium transition-colors px-0 py-0
                     ${
                       isActive
                         ? 'text-black dark:text-white'

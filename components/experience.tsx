@@ -13,7 +13,7 @@ export default function Experience() {
           return (
             <div
               key={index}
-              className="bg-white dark:bg-black border border-gray-300 dark:border-gray-800 rounded-lg overflow-hidden"
+              className="bg-white dark:bg-black border border-gray-300 dark:border-gray-800 rounded-lg overflow-hidden hover-lift"
             >
               <div className="p-4 pb-1">
                 <div className="flex items-start gap-3">

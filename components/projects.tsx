@@ -53,7 +53,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <Card
             key={index}
-            className="bg-white dark:bg-black border-gray-300 dark:border-gray-800 overflow-hidden hover:border-blue-500 transition-colors"
+            className="bg-white dark:bg-black border-gray-300 dark:border-gray-800 overflow-hidden hover:border-blue-500 transition-colors hover-lift"
           >
             <div className="h-48 overflow-hidden">
               <img
