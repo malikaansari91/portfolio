@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navItems = [
@@ -74,6 +74,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="flex justify-between items-center h-14">
+          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-10">
             {navItems.map((item) => {
               const sectionId = item.href.replace('#', '');
@@ -97,6 +98,20 @@ export default function Navbar() {
             })}
           </div>
 
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+
+          {/* Theme Toggle Button */}
           <Button
             variant="ghost"
             size="icon"
@@ -112,6 +127,36 @@ export default function Navbar() {
             <span className="sr-only">Toggle theme</span>
           </Button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-14 left-0 right-0 bg-white dark:bg-black border-b border-gray-200 dark:border-black">
+            <div className="container mx-auto px-4 py-2">
+              <div className="flex flex-col space-y-4">
+                {navItems.map((item) => {
+                  const sectionId = item.href.replace('#', '');
+                  const isActive = activeSection === sectionId;
+                  return (
+                    <button
+                      key={item.name}
+                      onClick={() => scrollToSection(item.href)}
+                      className={`text-sm font-medium transition-colors py-2
+                        ${
+                          isActive
+                            ? 'text-black dark:text-white'
+                            : 'text-gray-500 dark:text-gray-400'
+                        }
+                        hover:text-black dark:hover:text-white`}
+                      style={{ fontFamily: 'Inter, sans-serif' }}
+                    >
+                      {item.name}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
