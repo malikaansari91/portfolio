@@ -1,12 +1,13 @@
-import Navbar from "@/components/navbar";
-import Hero from "@/components/hero";
-import Skills from "@/components/skills";
-import Experience from "@/components/experience";
-import Education from "@/components/education";
-import Projects from "@/components/projects";
-import Contact from "@/components/contact";
-import Blog from "@/components/blog";
-import StarryBackground from "@/components/starry-background";
+import Navbar from '@/components/navbar';
+import Hero from '@/components/hero';
+import Skills from '@/components/skills';
+import Experience from '@/components/experience';
+import Education from '@/components/education';
+import Projects from '@/components/projects';
+import Contact from '@/components/contact';
+import Blog from '@/components/blog';
+import StarryBackground from '@/components/starry-background';
+import Footer from '@/components/footer';
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
           </section> */}
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
