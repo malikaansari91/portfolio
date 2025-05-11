@@ -1,19 +1,19 @@
-import { Card } from "@/components/ui/card";
-import { GraduationCap, School } from "lucide-react";
+import { Card } from '@/components/ui/card';
+import { GraduationCap, School } from 'lucide-react';
 
 export default function Education() {
   const education = [
     {
-      degree: "Master of Information Technology",
-      institution: "Mumbai University",
-      period: "June 2015 - May 2017",
+      degree: 'Master of Information Technology',
+      institution: 'Mumbai University',
+      period: 'Jun 2015 - May 2017',
       icon: GraduationCap,
       completed: true,
     },
     {
-      degree: "Bachelor of Information Technology",
-      institution: "Mumbai University",
-      period: "June 2012 - April 2015",
+      degree: 'Bachelor of Information Technology',
+      institution: 'Mumbai University',
+      period: 'Jun 2012 - Apr 2015',
       icon: School,
       completed: true,
     },
@@ -30,31 +30,29 @@ export default function Education() {
             key={index}
             className="bg-gray-100/20 dark:bg-black border border-gray-300 dark:border-gray-800 overflow-hidden"
           >
-            <div className="p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-white dark:bg-gray-900 rounded-md flex items-center justify-center overflow-hidden">
-                    {edu.icon && (
-                      <edu.icon className="h-10 w-10 text-blue-600 dark:text-blue-400" />
-                    )}
-                  </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold text-black dark:text-white">
-                    {edu.degree}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    {edu.institution}
-                  </p>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {edu.period}
-                  </p>
-                  {!edu.completed && "status" in edu && (
-                    <p className="text-gray-600 dark:text-gray-400 mt-2">
-                      {edu.status as string}
-                    </p>
+            <div className="px-6 py-3 flex items-center gap-5">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-white dark:bg-gray-900 rounded-md flex items-center justify-center overflow-hidden">
+                  {edu.icon && (
+                    <edu.icon className="h-7 w-7 text-blue-600 dark:text-blue-400" />
                   )}
                 </div>
+              </div>
+              <div className="flex-grow flex flex-col justify-center">
+                <h3 className="text-lg font-bold text-black dark:text-white">
+                  {edu.degree}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5">
+                  {edu.institution}
+                </p>
+                <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+                  {edu.period}
+                </p>
+                {!edu.completed && 'status' in edu && (
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                    {edu.status as string}
+                  </p>
+                )}
               </div>
             </div>
           </Card>
