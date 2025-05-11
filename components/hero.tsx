@@ -18,13 +18,13 @@ export default function Hero() {
 
   return (
     <div className="flex flex-col items-center justify-center text-center min-h-[70vh]">
-      <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 dark:from-red-400 dark:via-pink-500 dark:to-pink-500 text-transparent bg-clip-text">
+      <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 dark:from-red-400 dark:via-pink-500 dark:to-pink-500 text-transparent bg-clip-text">
         Malika Ansari
       </h1>
-      <p className="max-w-2xl text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
+      <p className="max-w-2xl text-base md:text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
         Passionate about crafting exceptional web experiences as a Frontend
         Developer. I specialize in building fast, scalable, and intuitive
-        applications that engage and delight users. Let’s create something great
+        applications that engage and delight users. Let's create something great
         together!
       </p>
       <div className="flex flex-wrap gap-4 justify-center">

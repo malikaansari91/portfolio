@@ -5,7 +5,7 @@ import { experienceData } from '@/lib/constants';
 export default function Experience() {
   return (
     <div>
-      <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-12 text-black dark:text-white">
         Professional Background
       </h2>
       <div className="space-y-10">
@@ -34,13 +34,13 @@ export default function Experience() {
                   </div>
                   <div className="flex-grow">
                     <div>
-                      <h3 className="text-lg font-bold text-black dark:text-white">
+                      <h3 className="text-base md:text-lg font-bold text-black dark:text-white">
                         {company.company}
                       </h3>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-0.5">
                         {company.companyInfo}
                       </p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
                         {company.location}
                       </p>
                     </div>
@@ -51,7 +51,7 @@ export default function Experience() {
               <div>
                 {company.roles.map((role, roleIndex) => (
                   <div key={roleIndex} className="py-3 px-4">
-                    <h4 className="text-lg font-bold text-black dark:text-white mb-0.5">
+                    <h4 className="text-base md:text-lg font-bold text-black dark:text-white mb-0.5">
                       {role.title}
                     </h4>
                     <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">
@@ -60,7 +60,7 @@ export default function Experience() {
 
                     <div className="space-y-2">
                       {role.achievements && (
-                        <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+                        <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                           {role.achievements}
                         </p>
                       )}

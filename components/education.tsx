@@ -21,7 +21,7 @@ export default function Education() {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-12 text-black dark:text-white">
         Where It All Began
       </h2>
       <div className="space-y-6">
@@ -39,10 +39,10 @@ export default function Education() {
                 </span>
               </div>
               <div className="flex-grow flex flex-col justify-center">
-                <h3 className="text-lg font-bold text-black dark:text-white">
+                <h3 className="text-sm md:text-lg font-bold text-black dark:text-white">
                   {edu.degree}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5 font-medium">
+                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-0.5 font-medium">
                   {edu.institution}
                 </p>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5 font-light">

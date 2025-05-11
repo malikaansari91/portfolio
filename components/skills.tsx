@@ -68,7 +68,7 @@ export default function Skills() {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-12 text-black dark:text-white">
         My Digital Playground
       </h2>
       <div className="bg-white dark:bg-black border border-gray-300 dark:border-gray-800 rounded-lg p-8 hover-lift">
