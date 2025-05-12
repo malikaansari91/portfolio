@@ -2,6 +2,11 @@
 
 import { experienceData } from '@/lib/constants';
 
+interface Skill {
+  name: string;
+  icon: string;
+}
+
 export default function Experience() {
   return (
     <div>
@@ -67,19 +72,17 @@ export default function Experience() {
                     </div>
 
                     <div className="flex flex-wrap gap-3 mt-3">
-                      {role.skills.map((skill, i) => (
+                      {role.skills.map((skill: Skill, i: number) => (
                         <div key={i} className="relative group">
                           <img
-                            alt={`${skill} icon`}
+                            alt={`${skill.name} icon`}
                             width={20}
                             height={20}
                             className="w-5 h-5"
-                            src={`https://www.fernand3z.dev/icons/${getIconFilename(
-                              skill.toLowerCase()
-                            )}`}
+                            src={skill.icon}
                           />
                           <span className="opacity-0 group-hover:opacity-100 absolute -top-7 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs py-0.5 px-1.5 rounded whitespace-nowrap transition-opacity duration-200">
-                            {skill}
+                            {skill.name}
                           </span>
                         </div>
                       ))}
@@ -93,77 +96,4 @@ export default function Experience() {
       </div>
     </div>
   );
-}
-
-// Function to map skill names to their SVG icon filenames
-function getIconFilename(skill: string): string {
-  switch (skill) {
-    case 'react':
-    case 'react.js':
-      return 'react-svgrepo-com.svg';
-    case 'typescript':
-      return 'typescript-svgrepo-com.svg';
-    case 'javascript':
-      return 'javascript-svgrepo-com.svg';
-    case 'next.js':
-      return 'nextjs-icon-svgrepo-com.svg';
-    case 'vitest':
-      return 'vite-svgrepo-com.svg';
-    case 'chrome extension':
-      return 'chrome-svgrepo-com.svg';
-    case 'eslint':
-      return 'eslint-svgrepo-com.svg';
-    case 'performance optimization':
-      return 'performance-svgrepo-com.svg';
-    case 'i18n':
-      return 'language-svgrepo-com.svg';
-    case 'responsive design':
-      return 'responsive-design-svgrepo-com.svg';
-    case 'lighthouse':
-      return 'lighthouse-svgrepo-com.svg';
-    case 'design systems':
-      return 'design-svgrepo-com.svg';
-    case 'email marketing':
-      return 'email-marketing-svgrepo-com.svg';
-    case 'frontend architecture':
-      return 'architecture-svgrepo-com.svg';
-    case 'user permissions':
-      return 'permission-svgrepo-com.svg';
-    case 'react native':
-      return 'react-svgrepo-com.svg';
-    case 'seo':
-      return 'seo-svgrepo-com.svg';
-    case 'mobile development':
-      return 'mobile-svgrepo-com.svg';
-    case 'asset management':
-      return 'asset-svgrepo-com.svg';
-    // Default mappings for common skills
-    case 'html':
-      return 'html-5-svgrepo-com.svg';
-    case 'css':
-      return 'css-svgrepo-com.svg';
-    case 'tailwind':
-      return 'tailwind-svgrepo-com.svg';
-    case 'node.js':
-      return 'node-svgrepo-com.svg';
-    case 'express':
-      return 'express-svgrepo-com.svg';
-    case 'postgresql':
-    case 'postgres':
-      return 'postgresql-svgrepo-com.svg';
-    case 'mongodb':
-      return 'mongodb-svgrepo-com.svg';
-    case 'firebase':
-      return 'firebase-svgrepo-com.svg';
-    case 'git':
-      return 'git-svgrepo-com.svg';
-    case 'github':
-      return 'github-svgrepo-com.svg';
-    case 'aws':
-      return 'aws-svgrepo-com.svg';
-    case 'docker':
-      return 'docker-svgrepo-com(1).svg';
-    default:
-      return 'code-svgrepo-com.svg'; // Default icon for unknown skills
-  }
 }
